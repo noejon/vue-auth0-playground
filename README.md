@@ -1,5 +1,15 @@
 # vue-auth0-playground
 
+Following this tutorial
+
+https://auth0.com/blog/vuejs2-authentication-tutorial/
+
+With documentation from
+
+https://johnpapa.net/vue-typescript/
+https://github.com/johnpapa/vue-typescript/blob/master/client/components/HeroList.vue
+https://alligator.io/vuejs/typescript-class-components/
+
 ## Step 1: Creating the backend server
 
 ### Setup
@@ -23,6 +33,33 @@ A `package.json` file should now be present in the server folder.
 Installing dependencies:
 `npm i -s body-parser cors express express-jwt jwks-rsa`
 
+Babel:
+
+Run `npm i --save-dev babel-cli babel-preset-env`
+
+Create a `.babelrc` file: `touch .babelrc`
+
+For a start file `.babelrc` with:
+
+```json
+{
+    "presets": ["env"]
+}
+```
+
+server.js:
+
+`server.js` does the following import `import { AUTH0_DOMAIN, API_AUDIENCE_ATTRIBUTE } from './config.js'`
+
+This file has been added to (.gitignore)[/.gitignore] as it contains my personal auth0 information.
+
+Please create a `config.js` file and add the following information:
+
+```javascript
+export const AUTH0_DOMAIN = '{YOUR_AUTH0_DOMAIN}';
+export const API_AUDIENCE_ATTRIBUTE = '{YOUR_API_AUDIENCE_ATTRIBUTE}';
+```
+
 ### Running
 
 Make sure that nodemon is globally installed
@@ -33,8 +70,9 @@ Open `/server/package.json` and modify the `scripts` as follow:
 
 ```
 "scripts": {
-    "start": "node server.js",
-    "start.dev": "nodemon server.js"
+    "build": "babel server.js -d dist"
+    "start": "npm run build && node dist/server.js",
+    "start.dev": "npm run build && nodemon dist/server.js"
 }
 ```
 
