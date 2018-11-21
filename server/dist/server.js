@@ -69,8 +69,8 @@ app.get('/api/friends/private', checkAuthentication, function (req, res) {
   var privateFriends = [{
     id: 1,
     city: 'Sydney',
-    firstName: 'Jonas',
-    lastName: 'M'
+    firstName: 'Joce',
+    lastName: 'S'
   }, {
     id: 2,
     city: 'Haguenau',
@@ -83,11 +83,6 @@ app.get('/api/friends/private', checkAuthentication, function (req, res) {
     lastName: 'M'
   }, {
     id: 4,
-    city: 'Haguenau',
-    firstName: 'Jul',
-    lastName: 'S'
-  }, {
-    id: 5,
     city: 'Shanghai',
     firstName: 'Yann',
     lastName: 'M'
