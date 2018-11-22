@@ -3,16 +3,16 @@ class AuthenticationService {
         console.log('creating new instance of authentication.service');
     }
 
-    isSignedIn() {
-        
-    }
-      
-    signIn() {
-        
+    public isSignedIn() {
+
     }
 
-    signOut() {
-        
+    public signIn() {
+
+    }
+
+    public signOut() {
+
     }
 }
 

@@ -19,11 +19,11 @@ import AppNav from './AppNav.vue';
 import { Friend } from '../models/friend';
 
 @Component({
-    components: {AppNav}
+    components: {AppNav},
 })
 export default class FriendsList extends Vue {
     @Prop() private title!: string;
-    @Prop() private friends!: Array<Friend>;
+    @Prop() private friends!: Friend[];
 }
 
 </script>

@@ -18,17 +18,15 @@ import { authenticationService } from '../services/authentication.service';
 
 @Component
 export default class AppNav extends Vue {
-    name: string ='app-nav';
-
-    handleSignIn() {
+    private handleSignIn() {
         authenticationService.signIn();
     }
 
-    handleSignOut() {
+    private handleSignOut() {
         authenticationService.signOut();
     }
 
-    isSignedIn() {
+    private isSignedIn() {
         return authenticationService.isSignedIn();
     }
 }

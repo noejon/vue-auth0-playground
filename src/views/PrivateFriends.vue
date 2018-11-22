@@ -1,27 +1,27 @@
 <template>
-    <FriendsList title="Public friends" v-bind:friends="publicFriends"></FriendsList>
+    <FriendsList title="Private friends" v-bind:friends="friends"></FriendsList>
 </template>
 <script lang="ts">
 
 import { Component, Vue } from 'vue-property-decorator';
-import FriendsList from './FriendsList.vue';
+import FriendsList from '../components/FriendsList.vue';
 import { Friend } from '../models/friend';
 import { authenticationService } from '../services/authentication.service';
 import { friendService } from '../services/friend.service';
 
 @Component({
-    components: {FriendsList}
+    components: {FriendsList},
 })
-export default class PublicFriendsList extends Vue {
-    publicFriends: Array<Friend> = [];
+export default class PrivateFriends extends Vue {
+    public friends: Friend[] = [];
 
     // lifecycle hooks
-    async mounted() {
-        this.publicFriends = await friendService.getPublicFriends();
+    public async mounted() {
+        this.friends = await friendService.getPrivateFriends();
     }
 
     // methods
-    async isSignedIn() {
+    public async isSignedIn() {
         return await authenticationService.isSignedIn();
     }
 }

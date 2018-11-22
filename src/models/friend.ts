@@ -3,5 +3,5 @@ export class Friend {
         public id: number,
         public firstName: string,
         public lastName: string,
-        public city: string){}
+        public city: string) {}
 }
