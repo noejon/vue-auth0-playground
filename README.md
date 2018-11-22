@@ -9,6 +9,7 @@ With documentation from
 https://johnpapa.net/vue-typescript/
 https://github.com/johnpapa/vue-typescript/blob/master/client/components/HeroList.vue
 https://alligator.io/vuejs/typescript-class-components/
+https://auth0.github.io/auth0.js/index.html
 
 ## Step 1: Creating the backend server
 
@@ -113,3 +114,19 @@ npm run test:unit
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+## Adding auth0
+
+Pre-requisite
+`jwt-decode`, `auth0-lock` and `auth-0-js`
+
+```
+npm i -s auth0-js auth0-lock jwt-decode
+```
+
+Types for typescript
+
+```
+npm i -s @types/auth0-js @types/auth0-lock
+```
