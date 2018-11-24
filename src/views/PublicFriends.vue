@@ -1,12 +1,16 @@
 <template>
-    <FriendsList title="Public friends" v-bind:friends="friends"></FriendsList>
+    <div>
+        <div>
+            <router-link to="/private-friends">Private Friends</router-link>
+        </div>
+        <FriendsList title="Public friends" v-bind:friends="friends"></FriendsList>
+    </div>
 </template>
 <script lang="ts">
 
 import { Component, Vue } from 'vue-property-decorator';
 import FriendsList from '../components/FriendsList.vue';
 import { Friend } from '../models/friend';
-import { authenticationService } from '../services/authentication.service';
 import { friendService } from '../services/friend.service';
 
 @Component({
@@ -22,7 +26,7 @@ export default class PublicFriends extends Vue {
 
     // methods
     public async isSignedIn() {
-        return await authenticationService.isSignedIn();
+        return await this.$authenticationService.isAuthenticated();
     }
 }
 

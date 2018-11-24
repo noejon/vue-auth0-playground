@@ -5,8 +5,8 @@
         </div>
         <ul>
             <li>
-                <button @click="handleSignOut()">Sign out</button>
-                <button @click="handleSignIn()">Sign in</button>
+                <button @click="handleSignOut()" v-show="isAuthenticated()">Sign out</button>
+                <button @click="handleSignIn()" v-show="!isAuthenticated()">Sign in</button>
             </li>
         </ul>
     </nav>
@@ -14,20 +14,19 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import { authenticationService } from '../services/authentication.service';
 
 @Component
 export default class AppNav extends Vue {
     private handleSignIn() {
-        authenticationService.signIn();
+        this.$authenticationService.signIn();
     }
 
     private handleSignOut() {
-        authenticationService.signOut();
+        this.$authenticationService.signOut();
     }
 
-    private isSignedIn() {
-        return authenticationService.isSignedIn();
+    private isAuthenticated() {
+        return this.$authenticationService.isAuthenticated();
     }
 }
 </script>

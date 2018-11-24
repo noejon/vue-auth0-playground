@@ -6,7 +6,6 @@
 import { Component, Vue } from 'vue-property-decorator';
 import FriendsList from '../components/FriendsList.vue';
 import { Friend } from '../models/friend';
-import { authenticationService } from '../services/authentication.service';
 import { friendService } from '../services/friend.service';
 
 @Component({
@@ -22,7 +21,7 @@ export default class PrivateFriends extends Vue {
 
     // methods
     public async isSignedIn() {
-        return await authenticationService.isSignedIn();
+        return await this.$authenticationService.isAuthenticated();
     }
 }
 

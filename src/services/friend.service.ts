@@ -4,10 +4,6 @@ import { Friend } from '../models/friend';
 const BASE_URL = 'http://localhost:3333';
 
 class FriendService {
-    constructor() {
-        console.log('creating new instance of friend.service');
-    }
-
     public getPublicFriends() {
         const url = `${BASE_URL}/api/friends/public`;
         return axios.get<Friend[]>(url).then((response) => response.data);

@@ -10,6 +10,13 @@ https://johnpapa.net/vue-typescript/
 https://github.com/johnpapa/vue-typescript/blob/master/client/components/HeroList.vue
 https://alligator.io/vuejs/typescript-class-components/
 https://auth0.github.io/auth0.js/index.html
+https://auth0.com/docs/libraries/auth0js/v9
+https://github.com/kjur/jsrsasign
+https://auth0.com/docs/quickstart/spa/vuejs/01-login
+https://www.npmjs.com/package/eventemitter3
+https://www.storyblok.com/tp/how-to-auth0-vuejs-authentication
+https://vuejs.org/v2/cookbook/adding-instance-properties.html
+https://vuejs.org/v2/guide/typescript.html#Augmenting-Types-for-Use-with-Plugins
 
 ## Step 1: Creating the backend server
 
@@ -119,14 +126,23 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ## Adding auth0
 
 Pre-requisite
-`jwt-decode`, `auth0-lock` and `auth-0-js`
+`jwt-decode` and `auth-0-js`
 
 ```
-npm i -s auth0-js auth0-lock jwt-decode
+npm i -s auth0-js jwt-decode
 ```
 
 Types for typescript
 
 ```
-npm i -s @types/auth0-js @types/auth0-lock
+npm i -s @types/auth0-js @types/jwt-decode
 ```
+
+#Typescript: Adding a plugin
+
+- define class
+- create a file plugin.d.ts
+- add all the relevant methods
+
+https://www.typescriptlang.org/docs/handbook/declaration-merging.html#module-augmentation
+https://vuejs.org/v2/guide/typescript.html#Augmenting-Types-for-Use-with-Plugins

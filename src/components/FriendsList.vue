@@ -15,8 +15,9 @@
 <script lang="ts">
 
 import { Component, Prop, Vue } from 'vue-property-decorator';
+
 import AppNav from './AppNav.vue';
-import { Friend } from '../models/friend';
+import { Friend } from '@/models/friend';
 
 @Component({
     components: {AppNav},
