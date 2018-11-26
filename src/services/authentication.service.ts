@@ -9,12 +9,12 @@ const TOKEN_EXPIRY_DATE = 'token_expiry_date';
 
 export class AuthenticationService {
 
-    private get accessToken(): string {
+    public get accessToken(): string {
         const token = localStorage.getItem(ACCESS_TOKEN_KEY);
         return token ? token : '';
     }
 
-    private set accessToken(value: string) {
+    public set accessToken(value: string) {
         localStorage.setItem(ACCESS_TOKEN_KEY, value);
     }
 
@@ -43,7 +43,7 @@ export class AuthenticationService {
 
     constructor() {
         this.auth = new WebAuth({
-            // audience: AUDIENCE,
+            audience: AUDIENCE,
             clientID: CLIENT_ID,
             domain: CLIENT_DOMAIN,
             redirectUri: REDIRECT,

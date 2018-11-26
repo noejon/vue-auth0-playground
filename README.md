@@ -146,3 +146,9 @@ npm i -s @types/auth0-js @types/jwt-decode
 
 https://www.typescriptlang.org/docs/handbook/declaration-merging.html#module-augmentation
 https://vuejs.org/v2/guide/typescript.html#Augmenting-Types-for-Use-with-Plugins
+
+
+No Audience => Bearer token fail
+https://auth0.com/docs/scopes/current/api-scopes
+Scope needs to be OpenId
+

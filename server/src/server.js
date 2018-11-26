@@ -17,10 +17,10 @@ const checkAuthentication = jwt({
         cache: true,
         rateLimit: true,
         jwksRequestsPerMinute: 5,
-        jwksUri: `https://${AUTH0_DOMAIN}/.well-known/jwks.json`,
+        jwksUri: `${AUTH0_DOMAIN}.well-known/jwks.json`,
     }),
     audience: API_AUDIENCE_ATTRIBUTE,
-    issuer: `http://${AUTH0_DOMAIN}.auth0.com/`,
+    issuer: AUTH0_DOMAIN,
     algorithms: ['RS256']
 })
 

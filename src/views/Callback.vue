@@ -16,7 +16,7 @@ export default class Callback extends Vue {
             this.$router.push({path: '/'});
         })
         .catch((error: any) => {
-            console.log(error);
+            // Here we could log the error.
             this.$router.push({path: '/'});
         });
     }
