@@ -152,3 +152,6 @@ No Audience => Bearer token fail
 https://auth0.com/docs/scopes/current/api-scopes
 Scope needs to be OpenId
 
+https://bootstrap-vue.js.org/docs
+
+https://router.vuejs.org/guide/advanced/navigation-guards.html#global-guards

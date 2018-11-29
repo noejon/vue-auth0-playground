@@ -1,8 +1,5 @@
 <template>
     <div>
-        <div>
-            <router-link to="/private-friends">Private Friends</router-link>
-        </div>
         <FriendsList title="Public friends" v-bind:friends="friends"></FriendsList>
     </div>
 </template>

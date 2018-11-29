@@ -1,14 +1,17 @@
 <template>
-    <nav>
-        <div>
-            <router-link to="/">Hello friends</router-link>
+    <nav class="navbar navbar-default">
+        <div class="jumbotron col-sm-12 container">
+            <div class="navbar-header">
+                    <router-link to="/" class="btn btn-info">Public Friends</router-link>
+                    <router-link to="/private-friends" class="btn btn-success">Private Friends</router-link>
+            </div>
+            <ul class="nav navbar-nav">
+                <li>
+                    <button @click="handleSignOut()" v-show="isAuthenticated()" class="btn btn-danger">Sign out</button>
+                    <button @click="handleSignIn()" v-show="!isAuthenticated()" class="btn btn-info">Sign in</button>
+                </li>
+            </ul>
         </div>
-        <ul>
-            <li>
-                <button @click="handleSignOut()" v-show="isAuthenticated()">Sign out</button>
-                <button @click="handleSignIn()" v-show="!isAuthenticated()">Sign in</button>
-            </li>
-        </ul>
     </nav>
 </template>
 
@@ -30,4 +33,17 @@ export default class AppNav extends Vue {
     }
 }
 </script>
+
+<style scoped>
+
+.navbar-right {
+    margin-right: 0px !important;
+}
+
+.btn {
+    margin: 5px 10px 0 0;
+}
+
+</style>
+
 

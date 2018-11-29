@@ -7,7 +7,7 @@ import PublicFriends from '@/views/PublicFriends.vue';
 
 Vue.use(Router);
 
-export default new Router({
+const router = new Router({
   mode: 'history',
   routes: [
     {
@@ -27,3 +27,16 @@ export default new Router({
     },
   ],
 });
+
+router.beforeEach((to, from, next) => {
+  const isAuthenticated: boolean = router.app.$authenticationService.isAuthenticated();
+  if (to.name === 'callback' || isAuthenticated) {
+    next();
+  } else if (to.name === 'PrivateFriends' && !isAuthenticated ) {
+      router.app.$authenticationService.signIn();
+  } else {
+    next();
+  }
+});
+
+export default router;

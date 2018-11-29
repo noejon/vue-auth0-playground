@@ -1,13 +1,23 @@
 <template>
     <div>
         <AppNav></AppNav>
-        <h3>{{ title }}</h3>
+        <h3 class="text-center">{{ title }}</h3>
         <hr/>
-        <div v-for="friend in friends" :key="friend.id">
-            <h3>{{friend.firstName}}</h3>
-            <div>
-                <p>{{friend.firstName}} {{friend.lastName}}</p>
-                <p>{{friend.city}}</p>
+        <div class="card-columns">
+            <div v-for="friend in friends" :key="friend.id" class="card">
+                <div class="card-header">
+                    <h3>{{friend.firstName}}</h3>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        <span class="badge alert-info">Name:</span>
+                        {{friend.firstName}} {{friend.lastName}}
+                    </p>
+                    <p class="card-text">
+                        <span class="badge alert-info">Location:</span>
+                        {{friend.city}}
+                    </p>
+                </div>
             </div>
         </div>
     </div>
